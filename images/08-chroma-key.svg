@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1fd16a"/>
+      <stop offset="1" stop-color="#0c8a43"/>
+    </linearGradient>
+    <radialGradient id="spot" cx="25%" cy="40%" r="50%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1a2e"/>
+      <stop offset=".55" stop-color="#101c18"/>
+      <stop offset="1" stop-color="#070908"/>
+    </linearGradient>
+    <radialGradient id="brandGlow" cx="78%" cy="55%" r="45%">
+      <stop offset="0" stop-color="#39ff88" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#39ff88" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="left"><path d="M0 0H760L520 720H0z"/></clipPath>
+    <clipPath id="right"><path d="M760 0H1280V720H520z"/></clipPath>
+    <g id="presenter">
+      <circle cx="0" cy="-150" r="62"/>
+      <path d="M-150 160c0-130 60-220 150-220s150 90 150 220z"/>
+    </g>
+  </defs>
+
+  <!-- RAW: green screen studio -->
+  <g clip-path="url(#left)">
+    <rect width="1280" height="720" fill="url(#screen)"/>
+    <rect width="1280" height="720" fill="url(#spot)"/>
+    <path d="M0 600H1280M120 0v600M300 0v600M480 0v600" stroke="#0a6b34" stroke-opacity=".5" stroke-width="2"/>
+    <path d="M150 140h22v22h-22zM450 140h22v22h-22zM450 440h22v22h-22z" fill="#0a6b34" opacity=".55"/>
+    <use href="#presenter" x="290" y="580" fill="#0b1410"/>
+  </g>
+
+  <!-- KEYED: branded composite -->
+  <g clip-path="url(#right)">
+    <rect width="1280" height="720" fill="url(#brand)"/>
+    <rect width="1280" height="720" fill="url(#brandGlow)"/>
+    <path d="M0 120H1280M0 240H1280M0 360H1280M0 480H1280M0 600H1280" stroke="#39ff88" stroke-opacity=".08"/>
+    <!-- floating UI panels -->
+    <rect x="790" y="96" width="230" height="130" rx="18" fill="#111a16" stroke="#39ff88" stroke-opacity=".45" stroke-width="2"/>
+    <rect x="812" y="118" width="110" height="14" rx="7" fill="#39ff88" opacity=".85"/>
+    <rect x="812" y="146" width="180" height="10" rx="5" fill="#f1f5f2" opacity=".25"/>
+    <path d="M812 206l36-16 32 9 36-22 36 12 36-18" fill="none" stroke="#39ff88" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="1060" y="96" width="170" height="130" rx="18" fill="#111a16" stroke="#3fd8ff" stroke-opacity=".45" stroke-width="2"/>
+    <rect x="1084" y="176" width="20" height="30" rx="4" fill="#3fd8ff" opacity=".7"/>
+    <rect x="1114" y="152" width="20" height="54" rx="4" fill="#39ff88" opacity=".8"/>
+    <rect x="1144" y="164" width="20" height="42" rx="4" fill="#3fd8ff" opacity=".7"/>
+    <rect x="1174" y="138" width="20" height="68" rx="4" fill="#39ff88" opacity=".8"/>
+    <!-- keyed presenter -->
+    <use href="#presenter" x="1010" y="580" fill="#24332c"/>
+    <use href="#presenter" x="1010" y="580" fill="none" stroke="#39ff88" stroke-width="5"/>
+    <!-- lower third -->
+    <rect x="820" y="560" width="420" height="56" rx="12" fill="#39ff88"/>
+    <rect x="844" y="580" width="180" height="16" rx="8" fill="#03160a"/>
+    <rect x="1040" y="582" width="170" height="12" rx="6" fill="#03160a" opacity=".45"/>
+  </g>
+
+  <!-- wipe line -->
+  <path d="M760 0L520 720" stroke="#39ff88" stroke-width="14" stroke-opacity=".25"/>
+  <path d="M760 0L520 720" stroke="#f1f5f2" stroke-width="4"/>
+
+  <!-- labels -->
+  <g font-family="Readex Pro, Segoe UI, Arial, sans-serif" font-weight="600" letter-spacing="6">
+    <rect x="56" y="640" width="120" height="40" rx="8" fill="#03160a" opacity=".75"/>
+    <text x="116" y="668" font-size="20" fill="#f1f5f2" text-anchor="middle">RAW</text>
+    <rect x="1110" y="640" width="120" height="40" rx="8" fill="#39ff88"/>
+    <text x="1170" y="668" font-size="20" fill="#03160a" text-anchor="middle">KEYED</text>
+  </g>
+</svg>

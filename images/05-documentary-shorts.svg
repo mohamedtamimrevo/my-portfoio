@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="45%" r="60%">
+      <stop offset="0" stop-color="#f5b942" stop-opacity=".22"/>
+      <stop offset=".5" stop-color="#39ff88" stop-opacity=".07"/>
+      <stop offset="1" stop-color="#070908" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="coin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd36b"/>
+      <stop offset="1" stop-color="#c9801e"/>
+    </linearGradient>
+    <linearGradient id="photo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3f3c"/>
+      <stop offset="1" stop-color="#1a1d1b"/>
+    </linearGradient>
+    <g id="holes">
+      <rect width="26" height="18" rx="4"/><rect x="60" width="26" height="18" rx="4"/><rect x="120" width="26" height="18" rx="4"/>
+      <rect x="180" width="26" height="18" rx="4"/><rect x="240" width="26" height="18" rx="4"/><rect x="300" width="26" height="18" rx="4"/>
+      <rect x="360" width="26" height="18" rx="4"/><rect x="420" width="26" height="18" rx="4"/><rect x="480" width="26" height="18" rx="4"/>
+      <rect x="540" width="26" height="18" rx="4"/><rect x="600" width="26" height="18" rx="4"/><rect x="660" width="26" height="18" rx="4"/>
+      <rect x="720" width="26" height="18" rx="4"/><rect x="780" width="26" height="18" rx="4"/><rect x="840" width="26" height="18" rx="4"/>
+      <rect x="900" width="26" height="18" rx="4"/><rect x="960" width="26" height="18" rx="4"/><rect x="1020" width="26" height="18" rx="4"/>
+      <rect x="1080" width="26" height="18" rx="4"/><rect x="1140" width="26" height="18" rx="4"/><rect x="1200" width="26" height="18" rx="4"/>
+      <rect x="1260" width="26" height="18" rx="4"/>
+    </g>
+  </defs>
+
+  <rect width="1280" height="720" fill="#070908"/>
+  <rect width="1280" height="720" fill="url(#glow)"/>
+
+  <!-- film strip -->
+  <g transform="rotate(-8 640 360)">
+    <rect x="-80" y="200" width="1440" height="300" fill="#0d110f" stroke="#39ff88" stroke-opacity=".25" stroke-width="2"/>
+    <use href="#holes" x="-60" y="214" fill="#070908"/>
+    <use href="#holes" x="-60" y="468" fill="#070908"/>
+    <!-- frames -->
+    <g stroke="#39ff88" stroke-opacity=".35" stroke-width="2">
+      <rect x="40" y="246" width="300" height="208" rx="6" fill="url(#photo)"/>
+      <rect x="980" y="246" width="300" height="208" rx="6" fill="url(#photo)"/>
+    </g>
+    <!-- archive scene: skyline -->
+    <path d="M40 454V380h40v-30h30v50h36v-70h40v40h50v-20h40v104z" fill="#0b0d0c" opacity=".85"/>
+    <!-- chart frame -->
+    <path d="M1000 430l50-40 50 20 60-70 60 30 40-50" fill="none" stroke="#39ff88" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="1220" cy="320" r="8" fill="#39ff88"/>
+  </g>
+
+  <!-- bitcoin coin -->
+  <g transform="translate(640 330)">
+    <circle r="132" fill="#c9801e" opacity=".25"/>
+    <circle r="112" fill="url(#coin)"/>
+    <circle r="92" fill="none" stroke="#7a4a0d" stroke-opacity=".45" stroke-width="4"/>
+    <text y="40" font-family="Readex Pro, Segoe UI, Arial, sans-serif" font-size="120" font-weight="700" fill="#5a3508" fill-opacity=".55" text-anchor="middle">₿</text>
+  </g>
+
+  <!-- narration waveform -->
+  <g fill="#39ff88">
+    <rect x="452" y="600" width="8" height="24" rx="4" opacity=".6"/><rect x="472" y="588" width="8" height="48" rx="4" opacity=".7"/>
+    <rect x="492" y="596" width="8" height="32" rx="4" opacity=".6"/><rect x="512" y="580" width="8" height="64" rx="4"/>
+    <rect x="532" y="592" width="8" height="40" rx="4" opacity=".7"/><rect x="552" y="604" width="8" height="16" rx="4" opacity=".5"/>
+    <rect x="572" y="586" width="8" height="52" rx="4"/><rect x="592" y="598" width="8" height="28" rx="4" opacity=".6"/>
+    <rect x="680" y="598" width="8" height="28" rx="4" opacity=".6"/><rect x="700" y="584" width="8" height="56" rx="4"/>
+    <rect x="720" y="600" width="8" height="24" rx="4" opacity=".6"/><rect x="740" y="590" width="8" height="44" rx="4" opacity=".7"/>
+    <rect x="760" y="580" width="8" height="64" rx="4"/><rect x="780" y="596" width="8" height="32" rx="4" opacity=".6"/>
+    <rect x="800" y="588" width="8" height="48" rx="4" opacity=".7"/><rect x="820" y="602" width="8" height="20" rx="4" opacity=".5"/>
+  </g>
+  <circle cx="640" cy="612" r="14" fill="#ff4d4d"/>
+
+  <g font-family="Readex Pro, Segoe UI, Arial, sans-serif" fill="#f5b942" font-weight="600">
+    <text x="640" y="684" font-size="24" letter-spacing="8" text-anchor="middle" opacity=".9">DOCUMENTARY SHORTS</text>
+  </g>
+</svg>
