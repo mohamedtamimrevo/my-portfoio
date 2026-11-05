@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!--
+================================================================================
+  Mohamed Tamim Revo — Video Editor & Filmmaker portfolio
+  Plain HTML + CSS + vanilla JS. No build step. Ready for GitHub Pages.
+================================================================================
+
+  QUICK CUSTOMIZATION GUIDE (README)
+  ----------------------------------
+  1. YOUR NAME / BRAND
+     - Search this file for "CUSTOMIZE: brand" and replace "Mohamed Tamim Revo".
+     - Update <title> and the meta description below, and the footer name.
+     - The translated page title lives in script.js -> I18N.en["meta.title"].
+
+  2. PROJECTS (portfolio grid)
+     - Open script.js and edit the PROJECTS array (section 2).
+     - List projects OLDEST first; add new ones at the END. They are numbered
+       automatically (01 = oldest) and the site shows the newest at the top.
+     - Each project has: title {en, ar}, categories, thumbnail, description {en, ar},
+       videos [{url, title}] and/or images [{src, title}] (a gallery, used when there are no videos).
+     - categories: any of "motion", "ads", "youtube", "films", "ai", "chroma".
+     - thumbnail: an image in the /images folder, e.g. "images/my-project.jpg".
+       Leave "" to use the first video's YouTube thumbnail automatically.
+     - video url: any normal link — "https://www.youtube.com/watch?v=VIDEO_ID",
+       "https://youtu.be/VIDEO_ID" or a Shorts link (Shorts open in a vertical player).
+       Videos load through youtube-nocookie.com only when a visitor clicks.
+
+  3. WHATSAPP, EMAIL, SOCIAL LINKS
+     - script.js section 1: WHATSAPP_LINK (or WHATSAPP_NUMBER), CONTACT_EMAIL,
+       SOCIAL_LINKS and BEHANCE_URL.
+
+  4. TEXT & TRANSLATIONS
+     - All interface text is in script.js -> I18N (section 3), in English ("en")
+       and Arabic ("ar"). Elements in this file use data-i18n="key" to pull text.
+       Edit the text in BOTH languages; the English text in this HTML is only a
+       fallback shown before JavaScript runs.
+
+  5. HERO IMAGE
+     - Search for "CUSTOMIZE: hero image" below and uncomment the <img> line,
+       pointing it to your own still frame (16:9 recommended, ~1600px wide).
+
+  6. DEPLOY ON GITHUB PAGES
+     - Create a new GitHub repository and upload index.html, style.css, script.js
+       (plus any /images folder) to the root.
+     - Repository -> Settings -> Pages -> "Deploy from a branch" -> main / (root) -> Save.
+     - Your site appears at https://<username>.github.io/<repository>/ in a minute or two.
+     - Tip: YouTube embeds may refuse to play when index.html is opened directly
+       from disk (file://). They work on GitHub Pages or any local server
+       (e.g. run "python -m http.server" in this folder and open http://localhost:8000).
+================================================================================
+-->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CUSTOMIZE: page title & description -->
+  <title>Mohamed Tamim Revo — Video Editor &amp; Filmmaker</title>
+  <meta name="description" content="Portfolio of a video editor and filmmaker: motion graphics, reels and ads, YouTube editing and films.">
+  <meta name="theme-color" content="#070908">
+  <!-- YouTube embeds need the site address (referrer) to play -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:title" content="Mohamed Tamim Revo — Video Editor & Filmmaker">
+  <meta property="og:description" content="Turning ideas into visual stories. Motion graphics, reels, YouTube editing and films.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070908'/%3E%3Cpath d='M12 9l12 7-12 7z' fill='%2339ff88'/%3E%3C/svg%3E">
+
+  <!-- Readex Pro supports both Latin and Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Enables JS-only animation states without hiding content when JS is off -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- CUSTOMIZE: brand — replace with your name or studio mark -->
+      <a class="brand" href="#home" aria-label="Mohamed Tamim Revo — home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">MOHAMED TAMIM<span class="brand-slash">/</span>REVO</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="#home" data-i18n="nav.home">Home</a></li>
+          <li><a href="#work" data-i18n="nav.work">Work</a></li>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.group">
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="true" lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false" lang="ar">عربي</button>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+                aria-label="Open menu" data-i18n-attr="aria-label:menu.open">
+          <span class="menu-icon" aria-hidden="true"><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="rec-dot" aria-hidden="true"></span><span data-i18n="hero.role">Video Editor &amp; Filmmaker</span></p>
+          <h1 class="hero-title" id="hero-title">
+            <span data-i18n="hero.title1">Turning ideas into</span>
+            <span class="accent" data-i18n="hero.title2">visual stories</span>
+            <span data-i18n="hero.title3">that stay with people.</span>
+          </h1>
+          <p class="hero-intro" data-i18n="hero.intro">I edit, design and film content for brands, creators and businesses — shaping raw footage into clear, rhythmic stories built to hold attention from the first frame to the last.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#work">
+              <span data-i18n="hero.ctaWork">View my work</span>
+              <svg class="icon dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <!-- WhatsApp link is built in script.js from WHATSAPP_NUMBER -->
+            <a class="btn btn-ghost js-whatsapp" href="https://wa.me/" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.1z"/><path d="M9 9.5c.3 1.8 2.7 4.2 4.5 4.5l1.2-1.2 2 .9c-.3 1.2-1.3 1.8-2.4 1.6-3.1-.6-5.9-3.4-6.5-6.5-.2-1.1.4-2.1 1.6-2.4l.9 2z" fill="currentColor" stroke="none"/></svg>
+              <span data-i18n="hero.ctaContact">Message on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cinematic visual: an editing "program monitor" + toolkit panel.
+             Kept left-to-right in both languages, like real editing software. -->
+        <div class="hero-visual reveal" dir="ltr">
+          <div class="monitor">
+            <div class="monitor-bar">
+              <span class="monitor-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="monitor-label">PROGRAM · SEQ_01</span>
+              <span class="timecode" id="timecode" aria-hidden="true">00:00:00:00</span>
+            </div>
+            <div class="monitor-screen">
+              <!-- Built-in placeholder scene (shown when no image is set) -->
+              <div class="scene" aria-hidden="true">
+                <span class="scene-sun"></span>
+                <span class="scene-ridge scene-ridge--back"></span>
+                <span class="scene-ridge scene-ridge--front"></span>
+                <span class="scene-figure"></span>
+              </div>
+              <!-- CUSTOMIZE: hero image — uncomment and point to your own still frame:
+              <img class="monitor-img" src="images/hero-still.jpg" alt="Still frame from a recent edit" width="1600" height="900" data-fallback>
+              -->
+              <span class="safe-guides" aria-hidden="true"></span>
+              <span class="letterbox letterbox--top" aria-hidden="true"></span>
+              <span class="letterbox letterbox--bottom" aria-hidden="true"></span>
+              <span class="screen-tag" data-i18n="hero.screenTag">Replace with your still frame</span>
+            </div>
+            <div class="timeline" aria-hidden="true">
+              <div class="track"><b>V2</b><span class="clip clip--fx" style="--s:18%;--w:22%"></span><span class="clip clip--fx" style="--s:58%;--w:16%"></span></div>
+              <div class="track"><b>V1</b><span class="clip" style="--s:0%;--w:30%"></span><span class="clip" style="--s:31%;--w:24%"></span><span class="clip" style="--s:56%;--w:28%"></span><span class="clip" style="--s:85%;--w:15%"></span></div>
+              <div class="track track--audio"><b>A1</b><span class="clip clip--audio" style="--s:0%;--w:62%"></span><span class="clip clip--audio" style="--s:63%;--w:37%"></span></div>
+              <div class="track track--audio"><b>A2</b><span class="clip clip--music" style="--s:6%;--w:94%"></span></div>
+              <span class="playhead"></span>
+            </div>
+          </div>
+
+          <!-- Compact toolkit panel (full list lives in the Skills section) -->
+          <aside class="tools-panel" aria-labelledby="tools-panel-title">
+            <div class="tools-panel-head">
+              <h2 id="tools-panel-title" data-i18n="hero.toolsTitle">Toolkit</h2>
+              <a href="#skills" class="tools-more" data-i18n="hero.toolsAll">All tools</a>
+            </div>
+            <ul class="tool-chips">
+              <li><span class="mono mono--pr">Pr</span>Premiere Pro</li>
+              <li><span class="mono mono--ae">Ae</span>After Effects</li>
+              <li><span class="mono mono--dr"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="7.5" rx="3.6" ry="5" fill="#F2542D"/><ellipse cx="12" cy="7.5" rx="3.6" ry="5" fill="#2D9CDB" transform="rotate(120 12 13)"/><ellipse cx="12" cy="7.5" rx="3.6" ry="5" fill="#7BC043" transform="rotate(240 12 13)"/></svg></span>DaVinci Resolve</li>
+              <li><span class="mono mono--au">Au</span>Audition</li>
+              <li><span class="mono mono--ps">Ps</span>Photoshop</li>
+              <li><span class="mono mono--cc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5l8 4.5 8-4.5M4 16.5l8-4.5 8 4.5M4 7.5v9M20 7.5v9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/></svg></span>CapCut</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ WORK ============================ -->
+    <section class="section work" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow" data-i18n="work.eyebrow">Selected work</p>
+            <h2 class="section-title" id="work-title" data-i18n="work.title">Featured projects</h2>
+          </div>
+          <div class="work-head-side">
+            <p class="section-note" data-i18n="work.note">Newest projects first. Open a project to watch every clip inside it.</p>
+            <!-- Behance link is set in script.js -> BEHANCE_URL -->
+            <a class="btn btn-ghost btn-behance js-behance" href="https://www.behance.net/gallery/217395127/Thumbnails" target="_blank" rel="noopener">
+              <span class="behance-mark" aria-hidden="true">Bē</span>
+              <span data-i18n="work.behance">Designs &amp; thumbnails on Behance</span>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="filters reveal" role="group" aria-label="Filter projects by category" data-i18n-attr="aria-label:work.filterLabel">
+          <button type="button" class="filter-btn" data-filter="all" aria-pressed="true" data-i18n="cat.all">All</button>
+          <button type="button" class="filter-btn" data-filter="motion" aria-pressed="false" data-i18n="cat.motion">Motion Graphics</button>
+          <button type="button" class="filter-btn" data-filter="ads" aria-pressed="false" data-i18n="cat.ads">Reels &amp; Ads</button>
+          <button type="button" class="filter-btn" data-filter="youtube" aria-pressed="false" data-i18n="cat.youtube">YouTube Videos</button>
+          <button type="button" class="filter-btn" data-filter="films" aria-pressed="false" data-i18n="cat.films">Films &amp; Documentaries</button>
+          <button type="button" class="filter-btn" data-filter="ai" aria-pressed="false" data-i18n="cat.ai">AI Content</button>
+          <button type="button" class="filter-btn" data-filter="chroma" aria-pressed="false" data-i18n="cat.chroma">Chroma Key</button>
+        </div>
+        <p class="visually-hidden" id="filter-status" role="status" aria-live="polite"></p>
+
+        <!-- Cards are generated from the PROJECTS array in script.js -->
+        <ul class="project-grid" id="project-grid"></ul>
+        <noscript><p class="section-note">Enable JavaScript to view the project gallery.</p></noscript>
+      </div>
+    </section>
+
+    <!-- ============================ ABOUT ============================ -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <p class="eyebrow" data-i18n="about.eyebrow">About</p>
+          <h2 class="section-title" id="about-title" data-i18n="about.title">Story first. Every cut with a purpose.</h2>
+          <!-- CUSTOMIZE: about text lives in script.js -> I18N "about.p1" / "about.p2" -->
+          <p data-i18n="about.p1">I'm a video editor and filmmaker focused on story, rhythm and detail. I work with brands, creators and businesses to shape footage into videos that feel intentional — from quick social cuts to longer-form pieces.</p>
+          <p data-i18n="about.p2">My process is simple: understand the goal, find the story in the footage, then refine every cut, sound and frame until it feels right.</p>
+          <!-- CUSTOMIZE: replace the bracketed placeholders in script.js -->
+          <dl class="facts">
+            <div><dt data-i18n="about.basedLabel">Based in</dt><dd data-i18n="about.basedValue">[Your city, country]</dd></div>
+            <div><dt data-i18n="about.workLabel">Works</dt><dd data-i18n="about.workValue">[Remote / on-site]</dd></div>
+          </dl>
+        </div>
+
+        <aside class="languages-card reveal" aria-labelledby="langs-title">
+          <h3 id="langs-title" data-i18n="about.langsTitle">Languages</h3>
+          <p class="langs-label" data-i18n="about.langsPrimary">Primary</p>
+          <ul class="lang-pills">
+            <li class="is-primary" data-i18n="lang.english">English</li>
+            <li class="is-primary" data-i18n="lang.arabic">Arabic</li>
+          </ul>
+          <p class="langs-label" data-i18n="about.langsMore">Also speaks</p>
+          <ul class="lang-pills">
+            <li data-i18n="lang.french">French</li>
+            <li data-i18n="lang.turkish">Turkish</li>
+            <li data-i18n="lang.italian">Italian</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================ SERVICES ============================ -->
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
+            <h2 class="section-title" id="services-title" data-i18n="services.title">What I can make for you</h2>
+          </div>
+        </div>
+        <ul class="service-grid">
+          <li class="service-card reveal">
+            <span class="service-num">01</span>
+            <svg class="service-icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="11" cy="16" r="6"/><path d="M19 10l8 6-8 6z"/></svg>
+            <h3 data-i18n="services.s1Title">Motion graphics</h3>
+            <p data-i18n="services.s1Text">Animated titles, logo reveals, explainers and graphic elements that give your edits a polished, on-brand finish.</p>
+          </li>
+          <li class="service-card reveal">
+            <span class="service-num">02</span>
+            <svg class="service-icon" viewBox="0 0 32 32" aria-hidden="true"><rect x="10" y="4" width="12" height="24" rx="3"/><path d="M14.5 13v6l5-3z"/></svg>
+            <h3 data-i18n="services.s2Title">Reels &amp; advertisements</h3>
+            <p data-i18n="services.s2Text">Short, punchy vertical and horizontal edits designed for social feeds and paid campaigns.</p>
+          </li>
+          <li class="service-card reveal">
+            <span class="service-num">03</span>
+            <svg class="service-icon" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="26" height="18" rx="5"/><path d="M13.5 12v8l7-4z"/></svg>
+            <h3 data-i18n="services.s3Title">Long-form YouTube editing</h3>
+            <p data-i18n="services.s3Text">Pacing, story structure, b-roll, captions and sound for episodes that keep viewers watching.</p>
+          </li>
+          <li class="service-card reveal">
+            <span class="service-num">04</span>
+            <svg class="service-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 22h24M4 10h24"/><circle cx="11" cy="10" r="3"/><circle cx="21" cy="22" r="3"/></svg>
+            <h3 data-i18n="services.s4Title">Video editing &amp; finishing</h3>
+            <p data-i18n="services.s4Text">From first assembly to final delivery: colour correction, audio clean-up, mixing and exports for every platform.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================ SKILLS ============================ -->
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow" data-i18n="skills.eyebrow">Software &amp; skills</p>
+            <h2 class="section-title" id="skills-title" data-i18n="skills.title">The toolkit behind the work</h2>
+          </div>
+          <p class="section-note" data-i18n="skills.note">Tools I use day to day, from first cut to final export.</p>
+        </div>
+        <!-- CUSTOMIZE: add or remove tools here. Icons are lightweight CSS/SVG tiles in each
+             program's brand colours (set in style.css under "Brand-colour software tiles"). -->
+        <ul class="skill-grid reveal">
+          <li class="skill"><span class="mono mono--pr">Pr</span><span class="skill-name">Adobe Premiere Pro</span><span class="skill-tag" data-i18n="skills.tagEdit">Editing</span></li>
+          <li class="skill"><span class="mono mono--ae">Ae</span><span class="skill-name">Adobe After Effects</span><span class="skill-tag" data-i18n="skills.tagMotion">Motion &amp; VFX</span></li>
+          <li class="skill"><span class="mono mono--au">Au</span><span class="skill-name">Adobe Audition</span><span class="skill-tag" data-i18n="skills.tagAudio">Audio</span></li>
+          <li class="skill"><span class="mono mono--dr"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="7.5" rx="3.6" ry="5" fill="#F2542D"/><ellipse cx="12" cy="7.5" rx="3.6" ry="5" fill="#2D9CDB" transform="rotate(120 12 13)"/><ellipse cx="12" cy="7.5" rx="3.6" ry="5" fill="#7BC043" transform="rotate(240 12 13)"/></svg></span><span class="skill-name">DaVinci Resolve</span><span class="skill-tag" data-i18n="skills.tagColor">Edit &amp; colour</span></li>
+          <li class="skill"><span class="mono mono--cc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5l8 4.5 8-4.5M4 16.5l8-4.5 8 4.5M4 7.5v9M20 7.5v9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/></svg></span><span class="skill-name">CapCut</span><span class="skill-tag" data-i18n="skills.tagSocial">Social edits</span></li>
+          <li class="skill"><span class="mono mono--ps">Ps</span><span class="skill-name">Adobe Photoshop</span><span class="skill-tag" data-i18n="skills.tagImage">Thumbnails &amp; stills</span></li>
+          <li class="skill"><span class="mono mono--notion">N</span><span class="skill-name">Notion</span><span class="skill-tag" data-i18n="skills.tagPlan">Planning</span></li>
+          <li class="skill"><span class="mono mono--framer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v7h-6zM6 9h6l6 7H6zM6 16h6v6z" fill="#fff"/></svg></span><span class="skill-name">Framer</span><span class="skill-tag" data-i18n="skills.tagWeb">Web prototypes</span></li>
+          <li class="skill">
+            <span class="mono mono--icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 13h5M8 16h8"/></svg></span>
+            <span class="skill-name" data-i18n="skills.uiux">UI/UX design</span><span class="skill-tag" data-i18n="skills.tagDesign">Design</span>
+          </li>
+          <li class="skill">
+            <span class="mono mono--icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span>
+            <span class="skill-name" data-i18n="skills.code">Basic programming</span><span class="skill-tag" data-i18n="skills.tagCode">Code</span>
+          </li>
+        </ul>
+
+        <!-- Hands-on experience. CUSTOMIZE: text lives in script.js -> I18N "exp.*" -->
+        <div class="exp reveal">
+          <div class="exp-head">
+            <h3 class="exp-title" data-i18n="exp.title">Experience I've built</h3>
+            <p class="section-note" data-i18n="exp.note">Beyond the software: the work I've done hands-on.</p>
+          </div>
+          <ul class="exp-grid">
+            <li class="exp-item">
+              <svg class="exp-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>
+              <h4 data-i18n="exp.content">Arabic &amp; English content creation</h4>
+              <p data-i18n="exp.contentText">Writing, producing and publishing content in both languages for social media platforms.</p>
+            </li>
+            <li class="exp-item">
+              <svg class="exp-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 13h3M8 16h6M15 13l2 2 3-3"/></svg>
+              <h4 data-i18n="exp.pages">Social media page management</h4>
+              <p data-i18n="exp.pagesText">Running pages day to day: planning posts, publishing and keeping a consistent identity.</p>
+            </li>
+            <li class="exp-item">
+              <svg class="exp-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.6"/></svg>
+              <h4 data-i18n="exp.design">Image &amp; video design</h4>
+              <p data-i18n="exp.designText">Posters, thumbnails, social posts and videos designed to stop the scroll.</p>
+            </li>
+            <li class="exp-item">
+              <svg class="exp-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+              <h4 data-i18n="exp.voice">Voice-over tuning</h4>
+              <p data-i18n="exp.voiceText">Cleaning, levelling and syncing narration so every word lands clearly.</p>
+            </li>
+            <li class="exp-item">
+              <svg class="exp-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M7 13h4v4H7zM14 13h4M14 16h3"/></svg>
+              <h4 data-i18n="exp.uiux">UI/UX</h4>
+              <p data-i18n="exp.uiuxText">Interface layouts and user flows that are clear and easy to use.</p>
+            </li>
+            <li class="exp-item">
+              <svg class="exp-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+              <h4 data-i18n="exp.code">Programming</h4>
+              <p data-i18n="exp.codeText">Building and editing web pages like this portfolio.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT ============================ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-glow" aria-hidden="true"></div>
+          <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+          <h2 class="section-title" id="contact-title" data-i18n="contact.title">Have a story to tell? Let's cut it together.</h2>
+          <p class="contact-text" data-i18n="contact.text">Tell me about your project, timeline and where the video will live. The fastest way to reach me is WhatsApp.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary btn-lg js-whatsapp" href="https://wa.me/" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.1z"/><path d="M9 9.5c.3 1.8 2.7 4.2 4.5 4.5l1.2-1.2 2 .9c-.3 1.2-1.3 1.8-2.4 1.6-3.1-.6-5.9-3.4-6.5-6.5-.2-1.1.4-2.1 1.6-2.4l.9 2z" fill="currentColor" stroke="none"/></svg>
+              <span data-i18n="contact.whatsapp">Chat on WhatsApp</span>
+            </a>
+            <!-- Email address is set in script.js -> CONTACT_EMAIL -->
+            <a class="btn btn-ghost btn-lg js-email" href="mailto:mohamed.tamim.revo@gmail.com">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <span class="js-email-text">mohamed.tamim.revo@gmail.com</span>
+            </a>
+          </div>
+          <!-- Social links are generated from SOCIAL_LINKS in script.js -->
+          <ul class="socials" id="socials" aria-label="Social profiles" data-i18n-attr="aria-label:contact.socials"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <!-- CUSTOMIZE: brand / name in footer -->
+      <p class="footer-brand">MOHAMED TAMIM<span class="brand-slash">/</span>REVO</p>
+      <p class="footer-copy">&copy; <span id="year">2026</span> <span data-i18n="footer.name">Mohamed Tamim Revo</span>. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <a class="footer-top" href="#home">
+        <span data-i18n="footer.top">Back to top</span>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- ============================ PROJECT MODAL ============================ -->
+  <dialog class="modal" id="project-modal" aria-labelledby="modal-title">
+    <div class="modal-inner">
+      <button class="modal-close" type="button" aria-label="Close" data-i18n-attr="aria-label:modal.close">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="modal-stage" id="modal-stage">
+        <div class="modal-media-col">
+          <div class="modal-media" id="modal-media"></div>
+          <a class="yt-link" id="modal-yt" href="https://www.youtube.com/" target="_blank" rel="noopener" hidden>
+            <span>Watch on YouTube</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          </a>
+        </div>
+        <div class="modal-side">
+          <div class="modal-body">
+            <span class="modal-num" id="modal-num"></span>
+            <span class="card-cat" id="modal-cat"></span>
+            <h2 class="modal-title" id="modal-title"></h2>
+            <p class="modal-desc" id="modal-desc"></p>
+          </div>
+          <div class="modal-list-wrap" id="modal-list-wrap">
+            <h3 class="playlist-title" id="playlist-title">Clips in this project</h3>
+            <ol class="playlist" id="modal-playlist" aria-labelledby="playlist-title"></ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
