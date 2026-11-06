@@ -894,6 +894,41 @@ p { margin: 0; }
 
 .card[hidden] { display: none; }
 
+/* Featured project: green frame, badge, wider on large screens */
+.card--featured {
+  border-color: var(--green-a35);
+  background:
+    radial-gradient(120% 80% at 50% 0%, var(--green-a10), transparent 60%),
+    linear-gradient(180deg, var(--surface-2), var(--surface));
+  box-shadow: var(--glow);
+}
+.card--featured:hover,
+.card--featured:focus-within {
+  border-color: var(--green);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9), 0 0 70px -14px rgba(57, 255, 136, 0.6);
+}
+.card--featured .card-title { font-size: 1.35rem; font-weight: 600; }
+.card-badge {
+  position: absolute;
+  bottom: 12px;
+  inset-inline-start: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--green);
+  color: var(--green-ink);
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 0 24px -4px rgba(57, 255, 136, 0.7);
+}
+.card-badge::before { content: "★"; font-size: 0.8em; }
+@media (min-width: 760px) {
+  .card--featured { grid-column: span 2; }
+}
+
 /* ---------- About ---------- */
 .about-grid {
   display: grid;

@@ -42,6 +42,8 @@ const BEHANCE_URL = "https://www.behance.net/gallery/217395127/Thumbnails";
    2. PROJECTS — CUSTOMIZE
    -----------------------------------------------------------------------------
    ORDER: list projects from OLDEST (first) to NEWEST (last).
+   Add featured: true to highlight a project (green frame, "Featured" badge,
+   wider card on large screens).
    They are numbered automatically (01 = oldest) and the site shows the
    NEWEST first. To add a new project, append it at the END of the array.
 
@@ -216,6 +218,19 @@ const PROJECTS = [
       { url: "https://youtube.com/shorts/ozORBTKBePY", title: { en: "AI short", ar: "مقطع قصير بالذكاء الاصطناعي" } },
       { url: "https://youtube.com/shorts/cd-sONbMinI", title: { en: "Dajjal — AI intro", ar: "الدجال — مقدمة بالذكاء الاصطناعي" } }
     ]
+  },
+  /* 11 */ {
+    title: { en: "Dr. James", ar: "د. جيمس" },
+    categories: ["ads"],
+    featured: true,
+    thumbnail: "",
+    description: {
+      en: "A short promo edit for Dr. James — pacing, motion and sound built to hook viewers from the first second.",
+      ar: "مقطع ترويجي قصير لـ د. جيمس، بإيقاع وحركة وصوت مصمَّمة لتشدّ المشاهد من أول ثانية."
+    },
+    videos: [
+      { url: "https://youtube.com/shorts/Hb_526NxxX0", title: { en: "Dr. James — video 1", ar: "د. جيمس — الفيديو 1" } }
+    ]
   }
 ];
 
@@ -267,6 +282,7 @@ const I18N = {
     "card.play": "Play video",
     "card.playAll": "Watch clips",
     "card.view": "View designs",
+    "card.featured": "Featured",
     "card.videos1": "1 video",
     "card.videos2": "2 videos",
     "card.videos": "{n} videos",
@@ -396,6 +412,7 @@ const I18N = {
     "card.play": "تشغيل الفيديو",
     "card.playAll": "شاهد المقاطع",
     "card.view": "عرض التصاميم",
+    "card.featured": "مميّز",
     "card.videos1": "فيديو واحد",
     "card.videos2": "فيديوهان",
     "card.videos": "{n} فيديوهات",
@@ -689,7 +706,7 @@ function renderProjects(animate = true) {
     const actionText = isGallery ? t("card.view") : items.length > 1 ? t("card.playAll") : t("card.play");
 
     const li = document.createElement("li");
-    li.className = "card";
+    li.className = project.featured ? "card card--featured" : "card";
     li.dataset.categories = cats.join(" ");
     li.hidden = currentFilter !== "all" && !cats.includes(currentFilter);
 
@@ -708,6 +725,13 @@ function renderProjects(animate = true) {
       countEl.className = "card-count";
       countEl.textContent = count;
       media.appendChild(countEl);
+    }
+
+    if (project.featured) {
+      const badge = document.createElement("span");
+      badge.className = "card-badge";
+      badge.textContent = t("card.featured");
+      media.appendChild(badge);
     }
 
     const play = document.createElement("span");
