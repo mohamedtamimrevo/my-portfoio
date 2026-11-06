@@ -54,12 +54,28 @@ const BEHANCE_URL = "https://www.behance.net/gallery/217395127/Thumbnails";
      videos:      [{ url: "YouTube link", title: { en, ar } }, ...]
                   Watch, youtu.be, Shorts and embed links all work. Shorts open
                   in a vertical player.
+                  A video file in the /videos folder also works:
+                  { file: "videos/my-video.mp4", poster: "images/frame.jpg", vertical: true, title: { en, ar } }
      images:      [{ src: "images/...", title: { en, ar } }, ...]
                   A gallery of designs. A project can have videos AND images:
                   the videos come first, then the images.
    ----------------------------------------------------------------------------- */
 const PROJECTS = [
   /* 01 */ {
+    title: { en: "Kuwaitna — Media Agency", ar: "كويتنا — وكالة إعلامية" },
+    categories: ["motion", "ads"],
+    thumbnail: "images/00-media-agency.jpg",
+    description: {
+      en: "Logo animation and branded shorts for Kuwaitna, a media agency.",
+      ar: "تحريك الشعار ومقاطع قصيرة بهوية بصرية لوكالة كويتنا الإعلامية."
+    },
+    videos: [
+      { file: "videos/00-media-agency.mp4", poster: "images/00-media-agency-poster.jpg", vertical: true, title: { en: "Kuwaitna — logo animation", ar: "كويتنا — تحريك الشعار" } },
+      { url: "https://youtube.com/shorts/8QXdREOCe3Q", title: { en: "Kuwaitna — video 4", ar: "كويتنا 4" } },
+      { url: "https://youtube.com/shorts/cQ5jB1akMO0", title: { en: "Kuwaitna — video 3", ar: "كويتنا 3" } }
+    ]
+  },
+  /* 02 */ {
     title: { en: "Med Tech — AI in Healthcare", ar: "ميد تك — الذكاء الاصطناعي في الطب" },
     categories: ["motion"],
     thumbnail: "images/01-med-tech.jpg",
@@ -71,7 +87,7 @@ const PROJECTS = [
       { url: "https://youtube.com/shorts/bo8o5rnRheg", title: { en: "AI in healthcare — motion graphic", ar: "الذكاء الاصطناعي في الطب — موشن غرافيك" } }
     ]
   },
-  /* 02 */ {
+  /* 03 */ {
     title: { en: "Travel Agency — Shawwal Umrah 2025", ar: "وكالة سياحية — عروض عمرة شوال 2025" },
     categories: ["motion", "ads"],
     thumbnail: "images/02-umrah-3.png",
@@ -88,7 +104,7 @@ const PROJECTS = [
       { src: "images/02-umrah-2.png", title: { en: "Hotel price card — square post", ar: "بطاقة أسعار الفندق — منشور مربع" } }
     ]
   },
-  /* 03 */ {
+  /* 04 */ {
     title: { en: "1954 — Archive Motion Edit", ar: "1954 — مونتاج أرشيفي" },
     categories: ["motion", "films"],
     thumbnail: "",
@@ -100,7 +116,7 @@ const PROJECTS = [
       { url: "https://youtu.be/L94CSkI8CVA", title: { en: "1954 — archive edit", ar: "1954 — مونتاج أرشيفي" } }
     ]
   },
-  /* 04 */ {
+  /* 05 */ {
     title: { en: "3D Camera Moves in After Effects", ar: "تحريك الكاميرا ثلاثي الأبعاد في أفتر إفكتس" },
     categories: ["motion"],
     thumbnail: "images/04-camera-layers.webp",
@@ -116,7 +132,7 @@ const PROJECTS = [
       { url: "https://www.youtube.com/shorts/sULz0R994J8", title: { en: "Meme coins — 3D camera edit", ar: "العملات الميمية — مونتاج بكاميرا ثلاثية الأبعاد" } }
     ]
   },
-  /* 05 */ {
+  /* 06 */ {
     title: { en: "Motion Graphics & Documentary Shorts", ar: "موشن غرافيك ومقاطع وثائقية" },
     categories: ["motion", "films"],
     thumbnail: "images/05-documentary-shorts.svg",
@@ -132,10 +148,12 @@ const PROJECTS = [
       { url: "https://youtube.com/shorts/sN9LG_8_lk8", title: { en: "Arab Anecdotes — intro", ar: "طرائف العرب — المقدمة" } },
       { url: "https://youtube.com/shorts/Y0eVIdKOnTM", title: { en: "Suyuf Battara — channel intro", ar: "إنترو سيوف بتارة" } },
       { url: "https://youtube.com/shorts/yH7TJuL_8nw", title: { en: "Do you know what's beautiful about hardship?", ar: "هل تعلم ما الجميل في العسر" } },
-      { url: "https://youtube.com/shorts/-p3ghVbgUJY", title: { en: "Umrah promo — design & motion graphics", ar: "إعلان العمرة — تصميم وموشن غرافيك" } }
+      { url: "https://youtube.com/shorts/-p3ghVbgUJY", title: { en: "Umrah promo — design & motion graphics", ar: "إعلان العمرة — تصميم وموشن غرافيك" } },
+      { url: "https://youtube.com/shorts/E7kPW5lbmXQ", title: { en: "Character motion graphic", ar: "موشن غرافيك شخصية" } },
+      { url: "https://youtube.com/shorts/YTUpOlP_I20", title: { en: "Character motion graphic — 1609", ar: "موشن غرافيك شخصية — 1609" } }
     ]
   },
-  /* 06 */ {
+  /* 07 */ {
     title: { en: "Suyuf Battara — History Channel", ar: "قناة سيوف بتارة" },
     categories: ["youtube", "films", "ai"],
     thumbnail: "images/06-suyuf-battara.jpg",
@@ -153,7 +171,7 @@ const PROJECTS = [
       { url: "https://youtube.com/shorts/--lgkp4cDGA", title: { en: "Book ad — AI storytelling", ar: "إعلان كتاب — سرد قصصي بالذكاء الاصطناعي" } }
     ]
   },
-  /* 07 */ {
+  /* 08 */ {
     title: { en: "ECONO GRAFIX — Economy Infographic", ar: "ECONO GRAFIX — إنفوغرافيك اقتصادي" },
     categories: ["motion"],
     thumbnail: "",
@@ -165,7 +183,7 @@ const PROJECTS = [
       { url: "https://youtube.com/shorts/7frTd11zV7E", title: { en: "Animated economy infographic", ar: "إنفوغرافيك اقتصادي متحرك" } }
     ]
   },
-  /* 08 */ {
+  /* 09 */ {
     title: { en: "Chroma Key & Branded Reels", ar: "كروما وريلز بهوية بصرية" },
     categories: ["chroma", "ads"],
     thumbnail: "images/08-chroma-key.svg",
@@ -180,7 +198,7 @@ const PROJECTS = [
       { url: "https://youtube.com/shorts/u0_e7s45EYY", title: { en: "Brand identity reel 06", ar: "ريلز هوية بصرية 06" } }
     ]
   },
-  /* 09 */ {
+  /* 10 */ {
     title: { en: "AI Videos — Generated Storytelling", ar: "فيديوهات الذكاء الاصطناعي" },
     categories: ["ai"],
     thumbnail: "images/09-ai-videos.svg",
@@ -543,8 +561,10 @@ const youtubeWatchUrl = (item) =>
 // A project's items: its videos first, then its images (designs).
 function projectItems(project) {
   const videos = (project.videos || [])
-    .map((v) => ({ type: "video", id: getYouTubeId(v.url), vertical: isShortsUrl(v.url), title: v.title }))
-    .filter((v) => v.id);
+    .map((v) => v.file
+      ? { type: "file", src: v.file, poster: v.poster || "", vertical: Boolean(v.vertical), title: v.title }
+      : { type: "video", id: getYouTubeId(v.url), vertical: isShortsUrl(v.url), title: v.title })
+    .filter((v) => v.type === "file" || v.id);
   const images = (project.images || []).map((img) => ({ type: "image", src: img.src, title: img.title }));
   return [...videos, ...images];
 }
@@ -553,6 +573,8 @@ function projectThumbnail(project, items) {
   if (project.thumbnail) return project.thumbnail;
   const firstVideo = items.find((i) => i.type === "video");
   if (firstVideo) return ytThumb(firstVideo.id);
+  const firstFile = items.find((i) => i.type === "file" && i.poster);
+  if (firstFile) return firstFile.poster;
   const firstImage = items.find((i) => i.type === "image");
   return firstImage ? firstImage.src : "";
 }
@@ -797,6 +819,15 @@ function loadMedia(item) {
     iframe.allowFullscreen = true;
     iframe.referrerPolicy = "strict-origin-when-cross-origin";
     media.appendChild(iframe);
+  } else if (item.type === "file") {
+    const video = document.createElement("video");
+    video.src = item.src;
+    if (item.poster) video.poster = item.poster;
+    video.controls = true;
+    video.playsInline = true;
+    video.preload = "metadata";
+    video.setAttribute("aria-label", `${t("modal.player")}: ${local(item.title)}`);
+    media.appendChild(video);
   } else {
     const img = document.createElement("img");
     img.src = item.src;
@@ -827,6 +858,8 @@ function renderModal(reloadMedia = true) {
     // Language changed while open: update labels only, keep the video playing.
     const iframe = $("#modal-media iframe");
     if (iframe && item) iframe.title = `${t("modal.player")}: ${local(item.title)}`;
+    const video = $("#modal-media video");
+    if (video && item) video.setAttribute("aria-label", `${t("modal.player")}: ${local(item.title)}`);
     const img = $("#modal-media img");
     if (img && item && item.type === "image") img.alt = local(item.title);
     const note = $("#modal-media .no-video");
@@ -849,7 +882,7 @@ function renderModal(reloadMedia = true) {
   list.innerHTML = "";
   side.hidden = items.length < 2;
   const hasImages = items.some((i) => i.type === "image");
-  const hasVideos = items.some((i) => i.type === "video");
+  const hasVideos = items.some((i) => i.type !== "image");
   $("#playlist-title").textContent = hasImages && hasVideos ? t("modal.media") : hasImages ? t("modal.designs") : t("modal.clips");
 
   items.forEach((it, i) => {
@@ -866,7 +899,7 @@ function renderModal(reloadMedia = true) {
     const thumb = document.createElement("span");
     thumb.className = "playlist-thumb";
     const timg = document.createElement("img");
-    timg.src = it.type === "video" ? ytThumb(it.id, "mqdefault") : it.src;
+    timg.src = it.type === "video" ? ytThumb(it.id, "mqdefault") : it.type === "file" ? it.poster : it.src;
     timg.alt = "";
     timg.loading = "lazy";
     timg.addEventListener("error", () => timg.remove());
