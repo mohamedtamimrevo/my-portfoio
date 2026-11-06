@@ -141,6 +141,7 @@ const PROJECTS = [
       ar: "مقاطع وثائقية قصيرة تمزج الموشن غرافيك باللقطات والتعليق الصوتي، عن البيتكوين والعملات الرقمية وغيرها."
     },
     videos: [
+      { url: "https://youtube.com/shorts/pCmQJc4JzPI", title: { en: "Documentary short — DOC25", ar: "مقطع وثائقي — DOC25" } },
       { url: "https://youtube.com/shorts/v_atNaIbszc", title: { en: "Bitcoin explained — part 1", ar: "شرح البيتكوين — الجزء 1" } },
       { url: "https://youtube.com/shorts/07k-OcMIAK0", title: { en: "Bitcoin explained — part 2", ar: "شرح البيتكوين — الجزء 2" } },
       { url: "https://youtube.com/shorts/GppFSUPQBUI", title: { en: "Documentary short — DOC23", ar: "مقطع وثائقي — DOC23" } },
